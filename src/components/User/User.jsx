@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const User = ({ user }) => {
-    const { id, name, email, username, phone } = user;
+const User = ({user}) => {
+    const {id, name, email, username, phone} = user;
     const userStyle = {
         border: '2px solid Tomato',
         padding: '10px',
@@ -15,9 +16,9 @@ const User = ({ user }) => {
         <div style={userStyle}>
             <h2>Username: {username}</h2>
             <h4>Name: {name}</h4>
-            <p>Id: {id}</p>
             <p>Email: {email}</p>
             <p>Phone No: {phone}</p>
+            <Link to={`/users/${id}`}><button>Show Details</button></Link>
         </div>
     );
 };
